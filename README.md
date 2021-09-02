@@ -1,4 +1,7 @@
-# aaaaaa GFS(じーふす)　by Team KOCHODANI
+# Forked from jin/237/GFS しています。
+　主に作業で参考にしたサイトを書いて行きます。
+
+# GFS(じーふす)　by Team KOCHODANI
 Information Processing Examinations Assistant Service<br>
 プロジェクト内容：情報系の資格取得を支援するためのコミュニティサイトの作成を行う
 
