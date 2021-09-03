@@ -167,3 +167,64 @@ diaryと一緒，またはこれらを簡潔にまとめたものや，murmur, s
 - 設定画面ボタン
 ```
 
+
+# windowsでのgfsの環境構築（途中から)
+- pythonの導入
+pythonのパッケージを[ここ](https://pythonlinks.python.jp/ja/index.html)からインストール
+インストールしたパッケージの.exeファイルをその場で実行
+そのときに出てきた画面で、
+[x] Install laucher for all users (recommended)
+[ ] Add Python 3.9 to PATH
+となっているのでチェックを付ける。
+そしたら、Customize installationを選択する。
+全部の項目にチェックがついてることを確認して、next
+
+[ ] Precompile standard library
+にdirチェックを入れる。
+この時に、ファイルの場所（C:\Users\[user_name]\AppData\Local\Programs\Python\Python39）を覚えておく。
+
+そしたらInstallする。
+おわったら、そのままClose
+
+念のために環境変数を見てみてpathが通ってるか確認する。（たぶん通ってる）
+
+そのままcmdお開いて、"python"を入力して、
+```
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+が出てくればOK
+抜けたい場合、'''exit()'''を入力すれば、抜けれる。
+
+通ってるはずだが、pipはだいたい古いのが入るのでアップグレードする。
+```python
+python -m pip install --upgrade pip
+```
+
+この後は、
+```
+cd Users\msuuu\Documents\GitHub\GFS\app
+C:\Users\msuu\Documents\GitHub\GFS\appdocker-compose up -d
+C:\Users\msuuu\Documents\GitHub\GFS\appdocker ps
+
+C:\Users\msuuu\Documents\GitHub\GFS\app>docker-compose exec gfs-web bash
+root@026d6dcceffa:/app# ls
+GFSProject
+root@026d6dcceffa:/app# cd gfsproject
+root@026d6dcceffa:/app/gfsproject# ls
+GFSProject  apps  gfs  manage.py  media  static  templates
+root@026d6dcceffa:/app/gfsproject# python manage.py runserver 0:8000
+Watching for file changes with StatReloader
+Performing system checks...
+
+<django.db.models.fields.related_descriptors.ForwardOneToOneDescriptor object at 0x7ffaee2f4310>
+System check identified no issues (0 silenced).
+September 03, 2021 - 16:40:05
+Django version 3.2.7, using settings 'GFSProject.settings'
+Starting development server at http://0:8000/
+Quit the server with CONTROL-C.
+```
+この後は、[http://localhost:8000/](http://localhost:8000/) コネクト
+
+
