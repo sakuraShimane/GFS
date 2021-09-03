@@ -169,17 +169,19 @@ diaryと一緒，またはこれらを簡潔にまとめたものや，murmur, s
 
 
 # windowsでのgfsの環境構築（途中から)
-- pythonの導入
-pythonのパッケージを[ここ](https://pythonlinks.python.jp/ja/index.html)からインストール
-インストールしたパッケージの.exeファイルをその場で実行
+### pythonの導入
+pythonのパッケージを[ここ](https://pythonlinks.python.jp/ja/index.html)からインストール<br>
+インストールしたパッケージの.exeファイルをその場で実行<br>
 そのときに出てきた画面で、
-[x] Install laucher for all users (recommended)
-[ ] Add Python 3.9 to PATH
+
+- [x] Install laucher for all users (recommended)
+- [ ] Add Python 3.9 to PATH
+
 となっているのでチェックを付ける。
 そしたら、Customize installationを選択する。
-全部の項目にチェックがついてることを確認して、next
+全部の項目にチェックがついてることを確認して、nextボタンをぽちっ。
 
-[ ] Precompile standard library
+- [ ] Precompile standard library
 にdirチェックを入れる。
 この時に、ファイルの場所（C:\Users\[user_name]\AppData\Local\Programs\Python\Python39）を覚えておく。
 
@@ -202,19 +204,18 @@ Type "help", "copyright", "credits" or "license" for more information.
 python -m pip install --upgrade pip
 ```
 
+### dockerの立ち上げと、pythonでの実行まで
 この後は、
 ```
-cd Users\msuuu\Documents\GitHub\GFS\app
-C:\Users\msuu\Documents\GitHub\GFS\appdocker-compose up -d
-C:\Users\msuuu\Documents\GitHub\GFS\appdocker ps
+cd Users\[user_name]\Documents\GitHub\GFS\app
+C:\Users\[user_name]\Documents\GitHub\GFS\app> docker-compose up -d
+C:\Users\[user_name]\Documents\GitHub\GFS\app> docker ps
 
-C:\Users\msuuu\Documents\GitHub\GFS\app>docker-compose exec gfs-web bash
-root@026d6dcceffa:/app# ls
-GFSProject
-root@026d6dcceffa:/app# cd gfsproject
-root@026d6dcceffa:/app/gfsproject# ls
-GFSProject  apps  gfs  manage.py  media  static  templates
+C:\Users\[user_name]\Documents\GitHub\GFS\app> docker-compose exec gfs-web bash
+root@026d6dcceffa:/app# cd GFSProject
 root@026d6dcceffa:/app/gfsproject# python manage.py runserver 0:8000
+
+>>>
 Watching for file changes with StatReloader
 Performing system checks...
 
@@ -225,6 +226,9 @@ Django version 3.2.7, using settings 'GFSProject.settings'
 Starting development server at http://0:8000/
 Quit the server with CONTROL-C.
 ```
+
+これで完了！
 この後は、[http://localhost:8000/](http://localhost:8000/) コネクト
+そうすると、ＧＦＳのプロダクトの中身が見れる。
 
 
