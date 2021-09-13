@@ -236,21 +236,21 @@ Quit the server with CONTROL-C.
 
 [1]requirements.txtにこれを追記
 
-Django
-mysqlclient
-djangorestframework
-django-crispy-forms
-pillow
+Django  
+mysqlclient  
+djangorestframework  
+django-crispy-forms  
+pillow  
 
 [2]この3つをインストール
 
 pip3 install djangorestframework
 
->>ModuleNotFoundError: No module named 'crispy_forms'
+>ModuleNotFoundError: No module named 'crispy_forms'
 
 pip3 install django-crispy-forms
 
->>ModuleNotFoundError: No module named 'PIL'
+>ModuleNotFoundError: No module named 'PIL'
 
 pip install pillow
 
