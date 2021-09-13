@@ -231,4 +231,26 @@ Quit the server with CONTROL-C.
 この後は、[http://localhost:8000/](http://localhost:8000/) コネクト
 そうすると、ＧＦＳのプロダクトの中身が見れる。
 
+★python manage.py runserver 0:8000したあとに出る
+  ModuleNotFoundError: No module named 'rest_framework'
+
+[1]requirements.txtにこれを追記
+
+Django
+mysqlclient
+djangorestframework
+django-crispy-forms
+pillow
+
+[2]この3つをインストール
+
+pip3 install djangorestframework
+
+>>ModuleNotFoundError: No module named 'crispy_forms'
+
+pip3 install django-crispy-forms
+
+>>ModuleNotFoundError: No module named 'PIL'
+
+pip install pillow
 
