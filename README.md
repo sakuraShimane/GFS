@@ -249,6 +249,14 @@ pip3 install django-crispy-forms
 pip install pillow
 ```
 
+[3]とめるとき
+
+```
+Ctrl+C
+exit
+docker stop
+
+```
 たぶんこういうエラーいわれる
 ```
 ModuleNotFoundError: No module named 'crispy_forms'  
