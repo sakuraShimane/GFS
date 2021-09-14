@@ -262,3 +262,23 @@ docker stop
 ModuleNotFoundError: No module named 'crispy_forms'  
 ModuleNotFoundError: No module named 'PIL'
 ```
+
+コマンドでリモートリポジトリのoriginをローカルリポジトリに反映させる
+GFSのした…
+
+```
+cdコマンドで.git(隠しファイルの可能性あり)があるところまで移動する
+
+//リモートリポジトリのすべてのブランチの更新履歴をリモート追跡ブランチに取り込む
+git fetch origin 
+
+//リモートブランチの変更をローカルブランチに反映させる
+git pull
+
+//error: Your local changes to the following files would be overwritten by merge:　こんなエラー出たら
+//ローカルにcommitしてないものがあるよ、上書きされちゃうよ！っていう注意
+//これはcommitかmargeをすればいいが、中途半端だからcommitしたくない　なら…👇
+
+```
+git stash
+```
